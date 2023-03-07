@@ -26,3 +26,13 @@ def scan_image(path):
                     Note_list.append(j['text'])
     df = pd.DataFrame(list(zip(Module_list,Evaluation_list,Note_list)),columns=["Module","Evaluation","Note"])
     return df
+
+#Adding scan_images function
+
+def scan_images(images_links):
+    df = pd.DataFrame()
+    for each_image in images_links:
+        df_temp = scan_image(each_image)
+        ##print(df_temp)
+        df=pd.concat([df,df_temp])
+    return df    
