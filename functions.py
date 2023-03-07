@@ -36,3 +36,16 @@ def scan_images(images_links):
         ##print(df_temp)
         df=pd.concat([df,df_temp])
     return df    
+
+#adding remove_replication function
+
+def remove_rep(dataframe:dict):
+     dataframe.reset_index(drop=True, inplace=True)
+     dataframe = dataframe.drop_duplicates()
+     return dataframe
+
+#adding convert_to_dataframe function 
+
+def convert_dataframe_to_json(dataframe:dict):
+     dataframe = dataframe.to_json()
+     return dataframe
