@@ -50,3 +50,16 @@ def convert_dataframe_to_json(dataframe:dict):
      dataframe = dataframe.to_json()
      return dataframe
 
+#adding filtring_and_filling_data function 
+
+def filtring_and_filling_data(dataframe:dict,Matiere_DS,Note_DS,Matiere_EXAM,Note_EXAM):
+    if(dataframe['Evaluation'][i]=='DS'):
+            temp = float(dataframe['Note'][i])
+            Note_DS.append(temp)
+            temp = dataframe['Module'][i]
+            Matiere_DS.append(temp)
+        else:
+            temp = float(dataframe['Note'][i])
+            Note_EXAM.append(temp)
+            temp = dataframe['Module'][i]
+            Matiere_EXAM.append(temp)
